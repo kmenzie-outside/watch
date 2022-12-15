@@ -3,39 +3,58 @@
 }
 
 
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
 
-.fadeOut{
-    position:absolute;
-    bottom:10%;
-    left:0;
-    background-color: black;
-    color: white;
-    opacity:0;
-    /*width:0;
-    height:0;*/
-    margin-left:20px;
-    transition: width 0.5s 0.5s, height 0.5s 0.5s, opacity 0.5s;
-    border-radius: 16px;
-
+    100% {
+        opacity: 1;
+    }
 }
-.fadeIn{
-    position:absolute;
-    bottom:20%;
-    background-color: rgba(0,0,0, 0.7);
-    color: white;
-    left:0;
-    z-index: 5;
-    opacity:1;
-    /*width:100px;
-    height:100px;*/
-    margin-left:20px;
-    transition: width 0.5s, height 0.5s, opacity 0.5s 0.5s;
-    border-radius: 16px;
 
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.castContainer {
+    background-color: rgba(0,0,0, 0.7);
+    position: absolute;
+    bottom: 120px;
+    left: 0;
+    color: white;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 16px;
+}
+
+@media screen and (max-width:1275px) {
+    .castContainer {
+        bottom: 70px;
+    }
+}
+
+.fadeOut {
+    opacity: 0;
+    transition: width 0.5s 0.5s, height 0.5s 0.5s, opacity 0.5s;
+}
+.fadeIn {
+    transition: width 0.5s, height 0.5s, opacity 0.5s 0.5s;
+}
+
+.castContainer article{
+    margin: 2em;
 }
 
 .cast {
-    display:flex;
+    display: flex;
 }
 .castDetails {
     margin:1em;
