@@ -21,3 +21,12 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+*.vsidx
+*.cache
+*.dll
+/obj/Debug/Watch_xray.njsproj.FileListAbsolute.txt
+/.vs/Watch_xray
+/.vs
+/Watch_xray.njsproj.user
+/Watch_xray.njsproj
+*.sln
