@@ -1,0 +1,53 @@
+.reactVideo {
+    position:relative;
+}
+
+
+
+.fadeOut{
+    position:absolute;
+    bottom:10%;
+    left:0;
+    background-color: black;
+    color: white;
+    opacity:0;
+    /*width:0;
+    height:0;*/
+    margin-left:20px;
+    transition: width 0.5s 0.5s, height 0.5s 0.5s, opacity 0.5s;
+    border-radius: 16px;
+
+}
+.fadeIn{
+    position:absolute;
+    bottom:20%;
+    background-color: rgba(0,0,0, 0.7);
+    color: white;
+    left:0;
+    z-index: 5;
+    opacity:1;
+    /*width:100px;
+    height:100px;*/
+    margin-left:20px;
+    transition: width 0.5s, height 0.5s, opacity 0.5s 0.5s;
+    border-radius: 16px;
+
+}
+
+.cast {
+    display:flex;
+}
+.castDetails {
+    margin:1em;
+}
+
+.castImage {
+    width:100px;
+    height:100px;
+    border-radius:8px;
+}
+
+h2 {
+    font-size:.75em;
+    text-align: center;
+}
