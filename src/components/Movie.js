@@ -10,7 +10,7 @@ const [cast, setCast] = useState([])
 const [seconds,setSeconds] = useState(0)
 
 useEffect(() => {
-
+  
   //Get Video File
   fetch('https://cdn.jwplayer.com/v2/media/5XNxzP2U')
   .then(response => response.json())
@@ -36,6 +36,7 @@ useEffect(() => {
     }) 
 
   })
+  
 
 },[])
 
