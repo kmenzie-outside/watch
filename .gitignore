@@ -29,3 +29,4 @@ yarn-error.log*
 /.vs
 /Watch_xray.njsproj.user
 /Watch_xray.njsproj
+*.sln

@@ -60,37 +60,39 @@ export default function Movie(props) {
         setVisible(true);
     };
 
+    const jwPlayer = React.Children.only(this.props.Children);
+    jwPlayer.onTime = (time) => updateTime(time);
+    jwPlayer.isAutoPlay = true;
+    jwPlayer.onPause = updateCast;
+    jwPlayer.onResume = () => setVisible(false);
+
     return (
         <div className="reactVideo">
 
             <div className={Visible ? 'fadeIn' : 'fadeOut'}>
-                <div className="cast">
-                    {cast.map((castInfo, index) => (
-                        <div className="castDetails" key={index}>
-                            <img src={"/assets/" + castInfo[0].name + ".png"}
-                                alt="{castInfo.name}"
-                                className="castImage" />
-                            <h2>{castInfo[0].name}</h2>
-                        </div>
-
-                    ))}
-
-                </div>
+                <CastDisplay cast={cast}></CastDisplay>
             </div>
 
-            <ReactJWPlayer
-                playerId='NjqDlXWT'
-                playerScript='https://cdn.jwplayer.com/libraries/NjqDlXWT.js'
-                file='https://cdn.jwplayer.com/videos/5XNxzP2U-MJjSqWn0.mp4'
-
-                //onAll={(event) => console.log(event)}
-                onTime={(time) => updateTime(time)}
-                isAutoPlay={true}
-                onPause={updateCast}
-                onResume={() => setVisible(false)}
-            />
+            {jwPlayer}
 
             <button onClick={() => console.log(cast)}>Get Chapters</button>
+        </div>
+    );
+}
+
+function CastDisplay(props) {
+    return (
+        <div className="cast">
+            {props.cast.map((castInfo, index) => (
+                <div className="castDetails" key={index}>
+                    <img src={"/assets/" + castInfo[0].name + ".png"}
+                        alt="{castInfo.name}"
+                        className="castImage" />
+                    <h2>{castInfo[0].name}</h2>
+                </div>
+
+            ))}
+
         </div>
     );
 }
