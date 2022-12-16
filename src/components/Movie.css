@@ -24,15 +24,21 @@
     }
 }
 
-.castContainer {
+.displayBox {
     background-color: rgba(0,0,0, 0.7);
+    border-radius: 16px;
+    margin-left: 2em;
+    margin-right: 2em;
+    width: fit-content;
+}
+
+.castContainer {
+
     position: absolute;
     bottom: 120px;
     left: 0;
     color: white;
-    margin-left: 20px;
-    margin-right: 20px;
-    border-radius: 16px;
+    pointer-events: none;
 }
 
 @media screen and (max-width:1275px) {
@@ -50,14 +56,18 @@
 }
 
 .castContainer article{
-    margin: 2em;
+    margin: 1em 2em;
+    padding: 1em;
+    pointer-events: initial;
 }
 
 .cast {
     display: flex;
+    pointer-events: initial;
 }
 .castDetails {
     margin:1em;
+    cursor: pointer;
 }
 
 .castImage {
@@ -69,4 +79,12 @@
 h2 {
     font-size:.75em;
     text-align: center;
+}
+
+.closeButton{
+    position: absolute;
+    top: 1.2em;
+    right: 2.2em;
+    width: 32px;
+    cursor: pointer;
 }

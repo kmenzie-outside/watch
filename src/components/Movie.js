@@ -27,7 +27,6 @@ export default function Movie(props) {
                 })
             );
             setCast(castList);
-            setActiveCast(castList);
         };
         getCast().catch(console.error);
     }, []);
@@ -98,8 +97,8 @@ function CastDisplay(props) {
             onAnimationStart={() => setAnimationActive(true)}>
             {((props.visible || animationActive) && props.cast?.length > 0) ?
                 <>
-                    <FocusedPerson focused={focusedActor} />
-                    <div className="cast">
+                    <FocusedPerson focused={focusedActor} onClear={() => setFocusedActor(null)} />
+                    <div className="cast displayBox">
                         {props.cast.map((castInfo, index) => (
                             <CastMemberTile castInfo={castInfo} key={index} focusActor={focusActor} />
                         ))}
@@ -113,7 +112,8 @@ function CastDisplay(props) {
 function FocusedPerson(props) {
     if (props.focused) {
         return (
-            <article>
+            <article className="displayBox">
+                <img src="/assets/closeIcon.png" onClick={props.onClear} alt="close" className="closeButton"/>
                 <img src={"/assets/" + props.focused.name + ".png"}
                     alt="{props.focused.name}"
                     className="castImage" />
